@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <title>Listra — Business Management Suite</title>
+    <meta name="description" content="Listra: inventory, sales, expenses, notes and profit intelligence for small businesses." />
+    <meta name="theme-color" content="#0f1013" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <!-- Pragmatic CSP for this static build. The production Next.js app moves
+         this into next.config headers with nonces for inline scripts. -->
+    <meta http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self'  blob:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="/icons/icon.svg" />
+    <link rel="icon" href="/icons/icon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400..700;1,400&family=JetBrains+Mono:wght@400..700&display=swap" rel="stylesheet" />
+    <script>
+      /* Apply persisted theme background before first paint to avoid a flash. */
+      (function () {
+        try {
+          var bg = {
+            "bento": "#eef0f4", "sunset-graphite": "#131417", "toxic-neon": "#0b0f0c",
+            "midnight-indigo": "#0c0f20", "arctic-glass": "#eaf2f7", "obsidian-gold": "#0f1013",
+            "ocean-slate": "#0f151c", "emerald-noir": "#0b120f", "rosewood": "#170f12",
+            "solar-sand": "#f5efe3", "cyber-violet": "#120e1a", "nordic-mist": "#f1f4f6",
+            "carbon-blue": "#0f1216", "copper-night": "#151010", "lavender-cloud": "#f4f2fa",
+            "crimson-steel": "#161214", "monochrome-pro": "#101012", "forest-ledger": "#edf1ea",
+            "classic-light": "#f4f5f7"
+          };
+          var t = localStorage.getItem("listra.theme") || "obsidian-gold";
+          var dark = t !== "bento" && t !== "arctic-glass" && t !== "solar-sand" && t !== "nordic-mist" && t !== "lavender-cloud" && t !== "forest-ledger" && t !== "classic-light";
+          var el = document.documentElement;
+          el.style.backgroundColor = bg[t] || bg["obsidian-gold"];
+          el.style.colorScheme = dark ? "dark" : "light";
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

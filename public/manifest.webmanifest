@@ -1,0 +1,20 @@
+{
+  "name": "Listra — Business Management Suite",
+  "short_name": "Listra",
+  "description": "Inventory, atomic sales, expenses, notes and profit intelligence for small businesses.",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0f1013",
+  "theme_color": "#0f1013",
+  "categories": ["business", "finance", "productivity"],
+  "icons": [
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "New sale", "url": "/#/sales", "description": "Record a sale" },
+    { "name": "Inventory", "url": "/#/inventory", "description": "Manage products and stock" },
+    { "name": "Reports", "url": "/#/reports", "description": "Profit intelligence" }
+  ]
+}
